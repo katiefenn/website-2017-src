@@ -10,7 +10,6 @@ import postcss from 'gulp-postcss';
 import modules from 'postcss-modules';
 import concat from 'gulp-concat';
 import assets from 'postcss-assets';
-import watch from 'gulp-watch';
 
 import jsxTemplate from "./lib/plugins/jsx-template";
 import paginate from "./lib/plugins/paginate";
@@ -18,13 +17,21 @@ require('images-require-hook')('.svg', '/dist/assets/img');
 const { Page } = require("./lib/components/page");
 const { Article } = require("./lib/components/article");
 
+gulp.task('dev', ['watch-site', 'server']);
+
 gulp.task('make-site', [
   'stylesheets',
   'index-pages',
   'article-pages'
 ]);
 
-gulp.task('dev', ['make-site', 'server']);
+gulp.task('watch-site', () => {
+  return gulp.watch('./lib/**/*', [
+    'stylesheets',
+    'index-pages',
+    'article-pages'
+  ]);
+});
 
 gulp.task('article-pages', function() {
   return gulp.src('articles/**/*')
