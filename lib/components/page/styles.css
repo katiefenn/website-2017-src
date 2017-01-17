@@ -1,0 +1,51 @@
+.body {
+  margin: 0;
+}
+
+.exhaust {
+  background: inline('exhaust.svg');
+  background-repeat: no-repeat;
+  height: 120%;
+  width: 100%;
+  position: fixed;
+  bottom: -50px;
+  left:-75px;
+  z-index: -1;
+}
+
+.shuttle {
+  background: inline('shuttle.svg');
+  width: 58px;
+  height: 133px;
+  position: absolute;
+  bottom: 0px;
+  left: 43px;
+  z-index: -1;
+}
+
+.gradient {
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  bottom: -200px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100 */
+  background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+  z-index: -1;
+}
+
+.mask {
+  background: #ffffff;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0px;
+  z-index: -1;
+}
+
+.content {
+  margin: 50px 0 0 275px;
+  max-width: 600px;
+}
