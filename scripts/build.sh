@@ -13,4 +13,4 @@ function doBuild {
 #     exit 0
 # fi
 
-bash ./deploy.sh
+bash ./scripts/deploy.sh
