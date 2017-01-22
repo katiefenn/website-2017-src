@@ -46,4 +46,4 @@ The community continues to be the most fulfilling thing about being a developer.
 
 My hope for 2016 is to write more articles, write more talks, and write more pull requests.
 
-Merry Christmas, and Happy New Year.
+Merry Christmas and Happy New Year.
