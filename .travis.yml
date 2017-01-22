@@ -1,0 +1,7 @@
+language: generic # don't install any environment
+
+script: bash ./scripts/build.sh
+env:
+  global:
+  - ENCRYPTION_LABEL: "618d44a01fd7"
+  - COMMIT_AUTHOR_EMAIL: "katie.fenn@googlemail.com"
