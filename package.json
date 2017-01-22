@@ -20,6 +20,8 @@
     "gulp-markdown": "^1.2.0",
     "gulp-postcss": "^6.3.0",
     "gulp-rename": "^1.2.2",
+    "gulp-sequence": "^0.4.6",
+    "gulp-sort": "^2.0.0",
     "gulp-watch": "^4.3.11",
     "gulp-webserver": "^0.9.1",
     "images-require-hook": "^1.0.3",

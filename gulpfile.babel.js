@@ -10,33 +10,50 @@ import postcss from 'gulp-postcss';
 import modules from 'postcss-modules';
 import concat from 'gulp-concat';
 import assets from 'postcss-assets';
+import sort from 'gulp-sort';
+import sequence from 'gulp-sequence';
 
 import jsxTemplate from "./lib/plugins/jsx-template";
 import paginate from "./lib/plugins/paginate";
+import replace from "./lib/plugins/replace";
+import stats from './lib/plugins/stats';
 require('images-require-hook')('.svg', '/dist/assets/img');
+
 const { Page } = require("./lib/components/page");
 const { Article } = require("./lib/components/article");
+const { PageIndex } = require("./lib/components/page-index");
+const ARTICLES_PER_PAGE = 10;
 
-gulp.task('dev', ['watch-site', 'server']);
+let articleCount = 0;
 
-gulp.task('make-site', [
-  'stylesheets',
-  'index-pages',
-  'article-pages'
-]);
+gulp.task('dev', sequence('make-site', 'watch-site', 'server'));
+
+gulp.task('make-site', sequence('stylesheets', 'article-stats', ['index-pages', 'article-pages']));
 
 gulp.task('watch-site', () => {
-  return gulp.watch('./lib/**/*', [
+  return gulp.watch(['lib/**/*.js', 'lib/**/*.css', 'lib/**/*.svg', 'articles/**/*'] , [
     'stylesheets',
     'index-pages',
     'article-pages'
   ]);
 });
 
+gulp.task('article-stats', () => {
+  return gulp.src('articles/**/*')
+    .pipe(stats(stats => {
+      articleCount = stats.fileCount;
+    }));
+});
+
 gulp.task('article-pages', function() {
   return gulp.src('articles/**/*')
     .pipe(filter(file => file.path.match(/manuscript/)))
     .pipe(markdown())
+    .pipe(sort({ asc: false }))
+    .pipe(rename((path) => {
+      path.basename = path.dirname.match(/\d{4}\-\d{2}\-\d{2}\-([\w\-]*)/)[1];
+      path.dirname = '';
+    }))
     .pipe(jsxTemplate(Article))
     .pipe(jsxTemplate(Page))
     .pipe(gulp.dest('./dist'));
@@ -44,8 +61,28 @@ gulp.task('article-pages', function() {
 
 gulp.task('index-pages', function() {
   return gulp.src('articles/**/*')
+    // Select just the article entry-point ("manuscript.md")
+    // to enable a collated article structure
     .pipe(filter(file => file.path.match(/manuscript/)))
+
+    // Transform Markdown into HTML
     .pipe(markdown())
+
+    .pipe(sort({ asc: false }))
+
+    .pipe(rename((path) => {
+      path.basename = path.dirname.match(/\d{4}\-\d{2}\-\d{2}\-([\w\-]*)/)[1];
+      path.dirname = '';
+    }))
+
+    // Add permalinks to article pages
+    .pipe(replace(/<h1[\w="\s\-]*>([\w\s]+)<\/h1>/, (file) => {
+      let path = file.path.match(/articles\/([\w\-]*)/)[1] + '.html';
+      return `<h1><a href="${ path }">$1</a></h1>`
+    }))
+
+    // Aggregate articles into index pages and inject
+    // into article templates (server-rendered React components)
     .pipe(paginate(10, file => {
       let output = ReactDOM.renderToString(
         <Article>
@@ -55,7 +92,13 @@ gulp.task('index-pages', function() {
 
       return output;
     }))
+
+    // Inject article content into site templates
+    // (server-rendered React components)
+    .pipe(jsxTemplate(PageIndex, { pageCount: Math.ceil(articleCount / ARTICLES_PER_PAGE) }))
     .pipe(jsxTemplate(Page))
+
+    // Send to the distributable directory for deployment
     .pipe(gulp.dest('./dist'));
 });
 

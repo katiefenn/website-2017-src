@@ -1,15 +1,62 @@
+h1, h2, h3, h4 {
+    font-family: 'Lato', sans-serif;
+    color: #eeeeee;
+
+    a {
+    	text-decoration: none;
+    }
+}
+
 h1 {
-  font-family: "Myriad Set Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 100;
-  font-size: 4em;
+  font-size: 2.074rem;
+  margin: 0 0 1rem 0;
 }
 
-article h1 {
-  font-size: 2em;
+@media (min-width: 480px) {
+  h1 {
+    font-size: 3rem;
+  }
 }
 
-body {
-  font-family: "Myriad Set Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 200;
-  color: #0000bb;
+h2 {
+  font-size: 1.728rem;
+  margin: 0 0 1rem 0;
+}
+
+@media (min-width: 480px) {
+  h2 {
+    font-size: 2.827rem;
+  }
+}
+
+h3 {
+  font-size: 1.44rem;
+  margin: 0 0 1rem 0;
+}
+
+@media (min-width: 480px) {
+  h3 {
+    font-size: 1.999rem;
+  }
+}
+
+h4 {
+  font-size: 1.2rem;
+  margin: 0 0 1rem 0;
+}
+
+@media (min-width: 480px) {
+  h4 {
+    font-size: 1.414rem;
+  }
+}
+
+code {
+  color: #eeeeee;
+}
+
+a {
+  color: #eeeeee;
+  text-decoration: none;
+  border-bottom: 1px solid #eeeeee;
 }
