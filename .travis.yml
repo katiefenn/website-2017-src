@@ -1,4 +1,6 @@
-language: generic # don't install any environment
+language: node_js
+node_js:
+  - "6"
 
 script: bash ./scripts/build.sh
 env:
