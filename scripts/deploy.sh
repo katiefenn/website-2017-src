@@ -10,7 +10,7 @@ SOURCE_BRANCH="master"
 TARGET_BRANCH="gh-pages"
 
 # Save some useful information
-REPO="https://github.com/katiefenn/website-2017-dist.git"
+REPO="https://github.com/katiefenn/katiefenn.github.io.git"
 SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 SHA=`git rev-parse --verify HEAD`
 

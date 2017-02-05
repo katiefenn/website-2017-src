@@ -96,7 +96,7 @@ Gulp then concatenates stylesheets together into a single file to be served on t
 ## Automating builds and deployment with Travis CI
 One of the pain points of making a static website in the past was the manual process of generating and deploying the site whenever content changed. [Travis CI](https://travis-ci.org/) once again proves an invaluable frontend development tool by doing this bit for me.
 
-My introduction to CI was a service than ran unit tests on my code whenever I pushed to GitHub. The sheer flexibility of modern CI services (such as Travis) allows them to do much more than this. Whenever I push a change to [my site's repository](https://github.com/katiefenn/website-2017-src) on GitHub, Travis builds my site and deploys the [built code](https://github.com/katiefenn/website-2017-dist) to [GitHub Pages](https://pages.github.com/). The built code is never committed to the source repository.
+My introduction to CI was a service than ran unit tests on my code whenever I pushed to GitHub. The sheer flexibility of modern CI services (such as Travis) allows them to do much more than this. Whenever I push a change to [my site's repository](https://github.com/katiefenn/website-2017-src) on GitHub, Travis builds my site and deploys the [built code](https://github.com/katiefenn/katiefenn.github.io) to [GitHub Pages](https://pages.github.com/). The built code is never committed to the source repository.
 
 [Dominic Denicola's article](https://gist.github.com/domenic/ec8b0fc8ab45f39403dd) explains the entire process for setting this up.
 
