@@ -1,3 +1,4 @@
+# Functional JS in a nutshell
 ## History
 Brendan Eich created Javascript in just ten days.
 
