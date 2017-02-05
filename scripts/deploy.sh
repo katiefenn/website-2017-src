@@ -7,7 +7,7 @@ function doBuild {
 }
 
 SOURCE_BRANCH="master"
-TARGET_BRANCH="gh-pages"
+TARGET_BRANCH="master"
 
 # Save some useful information
 REPO="https://github.com/katiefenn/katiefenn.github.io.git"
