@@ -16,6 +16,7 @@
     "babel-register": "^6.18.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.0.0",
     "gulp-filter": "^3.0.1",
     "gulp-hash": "^4.0.1",
     "gulp-markdown": "^1.2.0",

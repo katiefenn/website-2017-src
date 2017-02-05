@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom/server';
 import React from 'react';
 import hash from 'gulp-hash';
 import rename from 'gulp-rename';
-import webserver from 'gulp-webserver';
+import connect from 'gulp-connect';
 import postcss from 'gulp-postcss';
 import modules from 'postcss-modules';
 import concat from 'gulp-concat';
@@ -17,7 +17,7 @@ import jsxTemplate from "./lib/plugins/jsx-template";
 import paginate from "./lib/plugins/paginate";
 import replace from "./lib/plugins/replace";
 import stats from './lib/plugins/stats';
-require('images-require-hook')('.svg', '/dist/assets/img');
+require('images-require-hook')(['.svg', '.png', '.ico'], '/assets/img');
 
 const { Page } = require("./lib/components/page");
 const { Article } = require("./lib/components/article");
@@ -28,13 +28,14 @@ let articleCount = 0;
 
 gulp.task('dev', sequence('make-site', 'watch-site', 'server'));
 
-gulp.task('make-site', sequence('stylesheets', 'article-stats', ['index-pages', 'article-pages']));
+gulp.task('make-site', sequence('stylesheets', 'images', 'article-stats', ['index-pages', 'articles-and-pages']));
 
 gulp.task('watch-site', () => {
   return gulp.watch(['lib/**/*.js', 'lib/**/*.css', 'lib/**/*.svg', 'articles/**/*'] , [
     'stylesheets',
+    'images',
     'index-pages',
-    'article-pages'
+    'articles-and-pages'
   ]);
 });
 
@@ -45,14 +46,14 @@ gulp.task('article-stats', () => {
     }));
 });
 
-gulp.task('article-pages', function() {
-  return gulp.src('articles/**/*')
+gulp.task('articles-and-pages', function() {
+  return gulp.src(['articles/**/*', 'pages/**/*'])
     .pipe(filter(file => file.path.match(/manuscript/)))
     .pipe(markdown())
     .pipe(sort({ asc: false }))
     .pipe(rename((path) => {
-      path.basename = path.dirname.match(/\d{4}\-\d{2}\-\d{2}\-([\w\-]*)/)[1];
-      path.dirname = '';
+      path.basename = 'index';
+      path.dirname = path.dirname.replace(/\d{4}\-\d{2}\-\d{2}\-/, '');
     }))
     .pipe(jsxTemplate(Article))
     .pipe(jsxTemplate(Page))
@@ -71,27 +72,21 @@ gulp.task('index-pages', function() {
     .pipe(sort({ asc: false }))
 
     .pipe(rename((path) => {
-      path.basename = path.dirname.match(/\d{4}\-\d{2}\-\d{2}\-([\w\-]*)/)[1];
+      path.basename = path.dirname.replace(/\d{4}\-\d{2}\-\d{2}\-/, '');
       path.dirname = '';
     }))
 
     // Add permalinks to article pages
-    .pipe(replace(/<h1[\w="\s\-]*>([\w\s]+)<\/h1>/, (file) => {
-      let path = file.path.match(/articles\/([\w\-]*)/)[1] + '.html';
+    .pipe(replace(/<h1[\w="\s\-]*>([\w\s\-]+)<\/h1>/, (file) => {
+      let path = file.path.match(/articles\/([\w\-]*)/)[1];
       return `<h1><a href="${ path }">$1</a></h1>`
     }))
 
+    .pipe(jsxTemplate(Article))
+
     // Aggregate articles into index pages and inject
     // into article templates (server-rendered React components)
-    .pipe(paginate(10, file => {
-      let output = ReactDOM.renderToString(
-        <Article>
-          { file.contents.toString("utf8") }
-        </Article>
-      );
-
-      return output;
-    }))
+    .pipe(paginate(10))
 
     // Inject article content into site templates
     // (server-rendered React components)
@@ -103,7 +98,11 @@ gulp.task('index-pages', function() {
 });
 
 gulp.task('images', function() {
-  return gulp.src('lib/components/**/*.svg')
+  return gulp.src([
+    'lib/components/**/*.svg',
+    'lib/components/**/*.png',
+    'lib/components/**/*.ico'
+  ])
     .pipe(hash({
       algorithm: 'md5',
       template: '<%= hash %><%= ext %>',
@@ -113,6 +112,11 @@ gulp.task('images', function() {
       path.dirname = '';
     }))
     .pipe(gulp.dest('./dist/assets/img'))
+});
+
+gulp.task('manifest', function() {
+  return gulp.src('lib/components/page/manifest.json')
+    .pipe(gulp.dest('./dist/assets'))
 });
 
 gulp.task('stylesheets', () => {
@@ -132,8 +136,7 @@ gulp.task('stylesheets', () => {
 });
 
 gulp.task('server', function() {
-  gulp.src('./')
-    .pipe(webserver({
-      directoryListing: true
-    }));
+  connect.server({
+    root: 'dist'
+  });
 });

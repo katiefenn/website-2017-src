@@ -1,5 +1,8 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+
 h1, h2, h3, h4 {
-    font-family: 'Lato', sans-serif;
     color: #eeeeee;
 
     a {
@@ -14,7 +17,7 @@ h1 {
 
 @media (min-width: 480px) {
   h1 {
-    font-size: 3rem;
+    font-size: 2.827rem;
   }
 }
 
@@ -25,7 +28,7 @@ h2 {
 
 @media (min-width: 480px) {
   h2 {
-    font-size: 2.827rem;
+    font-size: 1.999rem;
   }
 }
 
@@ -36,7 +39,7 @@ h3 {
 
 @media (min-width: 480px) {
   h3 {
-    font-size: 1.999rem;
+    font-size: 1.414rem;
   }
 }
 
