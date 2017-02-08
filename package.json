@@ -20,8 +20,10 @@
     "gulp-filter": "^3.0.1",
     "gulp-hash": "^4.0.1",
     "gulp-markdown": "^1.2.0",
+    "gulp-paginate": "^1.0.0",
     "gulp-postcss": "^6.3.0",
     "gulp-rename": "^1.2.2",
+    "gulp-render-to-string": "^1.0.0",
     "gulp-sequence": "^0.4.6",
     "gulp-sort": "^2.0.0",
     "gulp-watch": "^4.3.11",
@@ -29,8 +31,10 @@
     "images-require-hook": "^1.0.3",
     "postcss-assets": "^4.1.0",
     "postcss-modules": "^0.6.3",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "dependencies": {
     "through2": "^2.0.3"
   }
 }

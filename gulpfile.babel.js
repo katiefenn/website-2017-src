@@ -12,9 +12,9 @@ import concat from 'gulp-concat';
 import assets from 'postcss-assets';
 import sort from 'gulp-sort';
 import sequence from 'gulp-sequence';
+import renderToString from "gulp-render-to-string";
+import paginate from "gulp-paginate";
 
-import jsxTemplate from "./lib/plugins/jsx-template";
-import paginate from "./lib/plugins/paginate";
 import replace from "./lib/plugins/replace";
 import stats from './lib/plugins/stats';
 require('images-require-hook')(['.svg', '.png', '.ico'], '/assets/img');
@@ -55,8 +55,8 @@ gulp.task('articles-and-pages', function() {
       path.basename = 'index';
       path.dirname = path.dirname.replace(/\d{4}\-\d{2}\-\d{2}\-/, '');
     }))
-    .pipe(jsxTemplate(Article))
-    .pipe(jsxTemplate(Page))
+    .pipe(renderToString(Article))
+    .pipe(renderToString(Page))
     .pipe(gulp.dest('./dist'));
 });
 
@@ -82,7 +82,7 @@ gulp.task('index-pages', function() {
       return `<h1><a href="${ path }">$1</a></h1>`
     }))
 
-    .pipe(jsxTemplate(Article))
+    .pipe(renderToString(Article))
 
     // Aggregate articles into index pages and inject
     // into article templates (server-rendered React components)
@@ -90,8 +90,8 @@ gulp.task('index-pages', function() {
 
     // Inject article content into site templates
     // (server-rendered React components)
-    .pipe(jsxTemplate(PageIndex, { pageCount: Math.ceil(articleCount / ARTICLES_PER_PAGE) }))
-    .pipe(jsxTemplate(Page))
+    .pipe(renderToString(PageIndex, { pageCount: Math.ceil(articleCount / ARTICLES_PER_PAGE) }))
+    .pipe(renderToString(Page))
 
     // Send to the distributable directory for deployment
     .pipe(gulp.dest('./dist'));
