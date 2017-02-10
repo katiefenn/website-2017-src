@@ -33,7 +33,7 @@ I use [gulp-rename](https://www.npmjs.com/package/gulp-rename) to strip date pre
 These plugins are *almost* enough to make a basic static site work, all that's left is to inject the processed content into an HTML template to make it look nice. [gulp-handlebars](https://www.npmjs.com/package/gulp-filter) is a good way of doing this normally, but this is where I start doing things differently.
 
 ## Custom render-to-html plugin
-As far as I know, there are no Gulp plugins to render piped HTML content into React components (know better? [Let me know!](http://twitter.com/katie_fenn)). The custom plugin I wrote for doing this takes HTML piped into it, creates a new instance of a React element with props from its arguments, and renders it to a string.
+As far as I know, there are no Gulp plugins to render piped HTML content into React components (know better? [Let me know!](http://twitter.com/katie_fenn)). The custom plugin I wrote for doing this, [gulp-render-to-string](https://www.npmjs.com/package/gulp-render-to-string), takes HTML piped into it, creates a new instance of a React element with props from its arguments, and renders it to a string.
 
 ```
 // Inject article content into site templates
@@ -62,7 +62,7 @@ There's just one part of the puzzle missing for making a working blog: paginated
 ## Custom pagination plugin
 Navigation of articles on my site has always been through collating articles into numbered pages. It's a common method of navigating blog-like sites, and I am somewhat surprised that a Gulp plugin does not exist to do this.
 
-I created another custom Gulp plugin that holds files piped into it until the number of articles held reaches a configurable articles-per-page setting. It then creates a new file with content from each file it holds appended together.
+I created another custom Gulp plugin, [gulp-paginate](https://www.npmjs.com/package/gulp-paginate), that holds files piped into it until the number of articles held reaches a configurable articles-per-page setting. It then creates a new file with content from each file it holds appended together.
 
 ## CSS Modules and PostCSS
 CSS Modules is one of the most exciting new developments in the world of CSS. It is a suite of tools that protect styles from being freely overwritten. This helps reduce the problem of unexpected side-effects when making changes to a site's styles. It also compliments building a site with React, by placing a focus on reusable user interface components instead of reusable styles.
@@ -114,3 +114,5 @@ As tools like React have matured, the community have started filling in the blan
 The best thing about the project was taking ownership of every aspect of the site. I loved using Ghost and Jekyll in the past, but with so much happening "under the hood" there is a reduced incentive for customisation. The recent trend for creating numerous small modules does a lot to break down the walls of what would otherwise be an opaque box.
 
 I hope this trend continues, especially if it is matched by the community making tooling intuitive and accessible.
+
+The complete source code for my site is [available on GitHub](https://github.com/katiefenn/website-2017-src).
