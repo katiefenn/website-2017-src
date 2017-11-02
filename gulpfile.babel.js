@@ -3,6 +3,7 @@ import markdown from "gulp-markdown";
 import filter from 'gulp-filter';
 import ReactDOM from 'react-dom/server';
 import React from 'react';
+import include from 'gulp-include';
 import hash from 'gulp-hash';
 import rename from 'gulp-rename';
 import connect from 'gulp-connect';
@@ -14,6 +15,7 @@ import sort from 'gulp-sort';
 import sequence from 'gulp-sequence';
 import renderToString from "gulp-render-to-string";
 import paginate from "gulp-paginate";
+import imagemin from "gulp-imagemin"
 
 import replace from "./lib/plugins/replace";
 import stats from './lib/plugins/stats';
@@ -28,14 +30,22 @@ let articleCount = 0;
 
 gulp.task('dev', sequence('make-site', 'watch-site', 'server'));
 
-gulp.task('make-site', sequence('stylesheets', 'images', 'article-stats', ['index-pages', 'articles-and-pages']));
+gulp.task('make-site',
+  sequence(
+    'stylesheets',
+    'images',
+    'article-stats',
+    ['index-pages', 'articles'],
+    'articles-images'
+  )
+);
 
 gulp.task('watch-site', () => {
   return gulp.watch(['lib/**/*.js', 'lib/**/*.css', 'lib/**/*.svg', 'articles/**/*'] , [
     'stylesheets',
     'images',
     'index-pages',
-    'articles-and-pages'
+    'articles'
   ]);
 });
 
@@ -46,9 +56,10 @@ gulp.task('article-stats', () => {
     }));
 });
 
-gulp.task('articles-and-pages', function() {
+gulp.task('articles', function() {
   return gulp.src(['articles/**/*', 'pages/**/*'])
     .pipe(filter(file => file.path.match(/manuscript/)))
+    .pipe(include())
     .pipe(markdown())
     .pipe(sort({ asc: false }))
     .pipe(rename((path) => {
@@ -59,6 +70,23 @@ gulp.task('articles-and-pages', function() {
     .pipe(renderToString(Page))
     .pipe(gulp.dest('./dist'));
 });
+
+gulp.task('articles-images', function() {
+  return gulp.src([
+    'articles/**/*.png',
+    'articles/**/*.jpg',
+    'articles/**/*.gif',
+    'pages/**/*.png',
+    'pages/**/*.jpg',
+    'pages/**/*.gif'
+  ])
+  .pipe(sort({ asc: false }))
+  .pipe(rename((path) => {
+    path.dirname = path.dirname.replace(/\d{4}\-\d{2}\-\d{2}\-/, '');
+  }))
+  .pipe(imagemin())
+  .pipe(gulp.dest('./dist'));
+})
 
 gulp.task('index-pages', function() {
   return gulp.src('articles/**/*')

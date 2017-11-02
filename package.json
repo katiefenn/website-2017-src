@@ -19,6 +19,8 @@
     "gulp-connect": "^5.0.0",
     "gulp-filter": "^3.0.1",
     "gulp-hash": "^4.0.1",
+    "gulp-imagemin": "^3.4.0",
+    "gulp-include": "^2.3.1",
     "gulp-markdown": "^1.2.0",
     "gulp-paginate": "^1.0.0",
     "gulp-postcss": "^6.3.0",

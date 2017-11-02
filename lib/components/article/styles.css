@@ -1,3 +1,7 @@
 .article {
 	margin: 0 0 4em;
 }
+
+.article img {
+	max-width: 100%;
+}
