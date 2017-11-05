@@ -70,6 +70,10 @@ In fact, all of these operators assign memory. They tell javascript to take a va
 ### Webassembly is the future
 Webassembly is a new feature for allowing browsers to run languages other than JavaScript in your web pages. It makes it possible to run high-performance code written in languages like C, C++, or Rust in a browser, like this example from Mozilla of the Unreal engine animating a complex 3d scene in real-time.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TwuIRcpeUWE" frameborder="0" allowfullscreen></iframe>
+
+Check out Mozilla's article here: [https://hacks.mozilla.org/2017/03/firefox-52-introducing-web-assembly-css-grid-and-the-grid-inspector/](https://hacks.mozilla.org/2017/03/firefox-52-introducing-web-assembly-css-grid-and-the-grid-inspector/) 
+
 Webassembly programs have complete ownership over the memory that they use, and can make their own decisions about how to allocate and free memory. This will give developers the same fine-control of memory, and the performance that comes with it, as native applications.
 
 For more information about webassembly, Lin Clark's excellent talk from JSConf covers the topic in much more detail!
