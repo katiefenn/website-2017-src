@@ -11,7 +11,7 @@ The baseline memory consumption for a "Hello World" page with no JavaScript, no 
 
 ## Memory leaks
 ![A webpage with a terminal memory leak](images/terminal-memory-leak.png)
-When your application steadily accumulates more data in memory than you expect, you have a memory leak. The majority of data created by applications are short-lived and are quickly discarded. Memory leaks are one of the most common problems and are caused by mistakes in code that tricks the garbage collector into thinking that unused data needs to be retained.
+When your application steadily accumulates more data in memory than you expect, you have a memory leak. The majority of data created by applications are short-lived and are quickly discarded. Memory leaks occur when your JavaScript code persistently adds more data to the heap than it discards. They are caused by code mistakes that prevent data from becoming unreachable and dying.
 
 ### Accidental globals
 Variables created in the global scope are by definition long-lived. This is because the global scope lasts as long as the website is open in the browser. Global variables live forever unless they are manually unset.
@@ -42,6 +42,8 @@ By fixing the global assignment, the garbage collector can free up all the memor
 
 ![Memory profile for accidental globals example - fixed](images/accidental-globals-fixed-profile.png)
 
+Linting tools such as [JShint](http://jshint.com/) and [ESlint](https://eslint.org/) can be configured to locate undeclared variables, and [JavaScript's strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode) makes it impossible to create them.
+
 ### Forgotten timers
 There are other scopes that create long-lived data. Timers and intervals have access to variables in their scope, and because they are needed as long as the timers are active, their scopes stay alive.
 
@@ -57,7 +59,7 @@ function startTimer() {
 
 ![Memory profile for forgotten timers](images/forgotten-timers-profile.png)
 
-It's interesting that the line doesn't only go up! This is the effect of the major GC compacting memory to make more effective use of it. The overall trend is upwards, the classic mark of a memory leak. The way to fix this is to always remember to clear your timeouts and intervals using `clearTimeout()` and `clearInterval()`.
+The overall trend is upwards, the classic mark of a memory leak. The way to fix this is to always remember to clear your timeouts and intervals using `clearTimeout()` and `clearInterval()`.
 
 ![Memory profile for forgotten timers](images/forgotten-timers-fixed-profile.png)
 

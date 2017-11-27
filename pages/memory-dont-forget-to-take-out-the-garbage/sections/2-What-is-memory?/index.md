@@ -53,7 +53,7 @@ function() {
 }
 ```
 
-Scopes capture the variables outside of functions and blocks and make them available for use inside. Inside of a scope, you can re-declare variable names and protect variables from being written to by other functions. Memory used by variables is freed again when their parent scope ends.
+Scopes capture the variables outside of functions and blocks and make them available for use inside. Inside of a scope, you can re-declare variable names and protect variables from being written to by other functions. Most importantly, any variables declared and used only within the scope can be discarded when the function ends, allowing the memory they use to be freed.
 
 `var`, `let` and `const` tell JavaScript to bind variables to the closest scope. Each one declares variables in different ways, so it's a great idea to read more about about [how](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/let) [they](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) [work](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var). Using these keywords inside of scopes means they can be safely discarded by JavaScript when the function ends. This is good because memory can be freed for variables we no longer need.
 
@@ -72,7 +72,7 @@ Webassembly is a new feature for allowing browsers to run languages other than J
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/TwuIRcpeUWE" frameborder="0" allowfullscreen></iframe>
 
-Check out Mozilla's article here: [https://hacks.mozilla.org/2017/03/firefox-52-introducing-web-assembly-css-grid-and-the-grid-inspector/](https://hacks.mozilla.org/2017/03/firefox-52-introducing-web-assembly-css-grid-and-the-grid-inspector/) 
+Check out Mozilla's article here: [https://hacks.mozilla.org/2017/03/firefox-52-introducing-web-assembly-css-grid-and-the-grid-inspector/](https://hacks.mozilla.org/2017/03/firefox-52-introducing-web-assembly-css-grid-and-the-grid-inspector/)
 
 Webassembly programs have complete ownership over the memory that they use, and can make their own decisions about how to allocate and free memory. This will give developers the same fine-control of memory, and the performance that comes with it, as native applications.
 
