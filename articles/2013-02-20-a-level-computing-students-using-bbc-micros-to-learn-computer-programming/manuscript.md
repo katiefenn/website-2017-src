@@ -1,4 +1,4 @@
-# A-Level Computing students using BBC Micros to learn computer programming
+## A-Level Computing students using BBC Micros to learn computer programming
 *20th February 2013*
 
 An [interesting report on BBC News][bbc-news] on A-Level Computing students using BBC Micros to learn computer programming.

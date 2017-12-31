@@ -1,6 +1,6 @@
 <!-- DON'T FORGET TO RECORD! -->
-# Memory Bloat and Memory Leaks
-## Memory Bloat
+### Memory Bloat and Memory Leaks
+#### Memory Bloat
 Memory bloat is making websites using excessive amounts of assets. HTML, CSS and your JavaScript code are also stored in memory, and Chrome has its own heap of memory to manage these in. It's important to remember that both heaps contribute to a page's memory footprint, and a page can experience problems without a single line of JavaScript being written.
 
 ![The task manager](images/task-manager.png)
@@ -9,11 +9,11 @@ Opening the Chrome task manager shows us how much memory each tab is consuming i
 
 The baseline memory consumption for a "Hello World" page with no JavaScript, no CSS and no images is around 160 megabytes. A crowded page consuming 500 megabytes may not cause an issue on a modern laptop with 16 gigabytes of memory, but it is significant for even a modern smartphone with 2 gigabytes of memory. It becomes critical on older and inexpensive devices that might have only 1 gigabyte of memory or less.
 
-## Memory leaks
+#### Memory leaks
 ![A webpage with a terminal memory leak](images/terminal-memory-leak.png)
 When your application steadily accumulates more data in memory than you expect, you have a memory leak. The majority of data created by applications are short-lived and are quickly discarded. Memory leaks occur when your JavaScript code persistently adds more data to the heap than it discards. They are caused by code mistakes that prevent data from becoming unreachable and dying.
 
-### Accidental globals
+#### Accidental globals
 Variables created in the global scope are by definition long-lived. This is because the global scope lasts as long as the website is open in the browser. Global variables live forever unless they are manually unset.
 
 ```
@@ -44,7 +44,7 @@ By fixing the global assignment, the garbage collector can free up all the memor
 
 Linting tools such as [JShint](http://jshint.com/) and [ESlint](https://eslint.org/) can be configured to locate undeclared variables, and [JavaScript's strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode) makes it impossible to create them.
 
-### Forgotten timers
+#### Forgotten timers
 There are other scopes that create long-lived data. Timers and intervals have access to variables in their scope, and because they are needed as long as the timers are active, their scopes stay alive.
 
 ```
@@ -63,7 +63,7 @@ The overall trend is upwards, the classic mark of a memory leak. The way to fix 
 
 ![Memory profile for forgotten timers](images/forgotten-timers-fixed-profile.png)
 
-### Forgotten event listeners
+#### Forgotten event listeners
 Event listeners also capture variables in their scope and can keep them alive just like timers.
 
 ```
@@ -81,7 +81,7 @@ function createButton() {
 
 As long as the event listener is active, its scope is kept alive. Removing unneeded event listeners using `removeEventListener()` frees up the memory they use.
 
-### Detached DOM nodes
+#### Detached DOM nodes
 A common source of memory leaks are orphaned DOM nodes. We use DOM nodes for creating and manipulating HTML elements.
 
 ```

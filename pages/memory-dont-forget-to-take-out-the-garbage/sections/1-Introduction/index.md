@@ -1,4 +1,4 @@
-# Introduction
+## Introduction
 Memory is fundamentally important to any computer program. It is an in-demand, finite resource. As devices are given more memory, our apps discover new ways of gobbling it up.
 
 ![User interfaces changing over time](images/interfaces-through-time.png)

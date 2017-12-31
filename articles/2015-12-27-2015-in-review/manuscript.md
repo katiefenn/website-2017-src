@@ -1,4 +1,4 @@
-# 2015 in Review
+## 2015 in Review
 *27th December 2015*
 
 I've never written an annual review before, but because this year has been a turnaround year for me, and because I've been inspired by [Chad's writing](http://www.kitation.co.uk/), now seems like a good time to start.

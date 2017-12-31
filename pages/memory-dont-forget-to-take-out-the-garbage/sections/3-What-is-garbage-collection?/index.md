@@ -1,5 +1,5 @@
 <!-- DON'T FORGET TO RECORD! -->
-## Garbage collection
+### Garbage collection
 So far we've learned about how memory is allocated. Let's talk about how memory is freed.
 
 Memory is a finite resource inside the computer. It's not created or destroyed. JavaScript can only make sure that it is only using as much memory as it needs and free up memory it doesn't need for re-use.
