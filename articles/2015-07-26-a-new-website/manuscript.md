@@ -1,4 +1,4 @@
-# A New website
+## A New website
 *26th July 2015*
 
 Since last year, I have been taking a keen interest in [Ghost](https://ghost.org/), the new blogging platform built on Node.JS. I've been fortunate to contribute to the project, and I'm planning on continuing to donate some of my time and experience.

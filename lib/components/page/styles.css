@@ -1,25 +1,36 @@
 .body {
   margin: 0;
-  background-color: #5166b3;
+  background-color: #e6e6e6;
   font-weight: 300;
   font-size: 1.2em;
-  color: #ddddff;
+  color: #666666;
+  display: flex;
+  flex-direction: column;
 }
 
+@media (min-width: 480px) {
+  .body {
+    flex-direction: initial;
+  }
+}
+
+
 .content {
+  flex: 1;
+  display: flex;
   margin: 0 5px;
 }
 
 @media (min-width: 480px) {
   .content {
-    margin: 32px 20px 0  114px;
+    margin: 32px 20px 0 0px;
     max-width: 560px;
   }
 }
 
 @media (min-width: 700px) {
   .content {
-    margin: 15px 50px 0  258px;
+    margin: 15px 50px 0  0px;
   }
 }
 
@@ -31,27 +42,13 @@
 @media (min-width: 480px) {
   .decoration {
     display: block;
+    padding-left: 114px;
   }
 }
 
-.exhaust {
-  background: inline('exhaust.svg');
-  position: fixed;
-  transform: translateZ(0px);
-  width: 75px;
-  height: 100%;
-  top: 0px;
-  left: 15px;
-  background-repeat: repeat-y;
-}
-
 @media (min-width: 700px) {
-  .exhaust {
-    width: 100px;
-    height: 100%;
-    bottom: auto;
-    top: 0px;
-    left: -9px;
+  .decoration {
+    padding-left: 320px;
   }
 }
 
@@ -63,7 +60,7 @@
   width: 44px;
   height: 100px;
   top: 383px;
-  left:30px;
+  left:23px;
 }
 
 @media (min-width: 700px) {
@@ -72,41 +69,62 @@
     height: 133px;
     top: auto;
     bottom: 0px;
-    left: 0px;
+    left: 63px;
   }
 }
 
-.vapour {
-  background: inline('vapour.svg');
-  width: 116px;
-  height: 72px;
+.vapour1 {
+  background: inline('bubbles-plume-a.svg');
+  width: 146px;
+  height: 95px;
   position: absolute;
   transform: translateZ(0px);
-  top: 462px;
-  left: -7px;
+  top: 427px;
+  left: -31px;
 }
 
 @media (min-width: 700px) {
-  .vapour {
-    width: 155px;
-    height: 96px;
+  .vapour1 {
+    width: 194px;
+    height: 126px;
     top: auto;
-    bottom: -72px;
-    left: -39px;
+    bottom: -27px;
+    left: -10px;
+  }
+}
+
+.vapour2 {
+  background: inline('vapour.svg');
+  width: 142px;
+  height: 69px;
+  position: absolute;
+  transform: translateZ(0px);
+  top: 462px;
+  left: -27px;
+}
+
+@media (min-width: 700px) {
+  .vapour2 {
+    width: 189px;
+    height: 91px;
+    top: auto;
+    bottom: -61px;
+    left: -3px;
   }
 }
 
 .mask {
-  width: 100px;
+  width: 124px;
   height: 484px;
   position: absolute;
   top: 0px;
   left: -9px;
-  background: #5166b3;
+  background: #e6e6e6;
 }
 
 @media (min-width: 700px) {
   .mask {
+    width: 226px;
     height: 100%;
     top: auto;
     bottom: 0px;
@@ -116,17 +134,17 @@
 
 .gradient {
   display: none;
-  height: 70px;
-  width: 100px;
+  height: 224px;
+  width: 226px;
   position: absolute;
-  bottom: -45px;
+  bottom: -239px;
   left: -9px;
-  background: -moz-linear-gradient(top, rgba(81,102,179,1) 0%, rgba(64,150,238,0) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(81,102,179,1)), color-stop(100%,rgba(64,150,238,0))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(81,102,179,1) 0%,rgba(64,150,238,0) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(81,102,179,1) 0%,rgba(64,150,238,0) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(81,102,179,1) 0%,rgba(64,150,238,0) 100%); /* IE10+ */
-  background: linear-gradient(to bottom, rgba(81,102,179,1) 0%,rgba(64,150,238,0) 100%); /* W3C */
+  background: -moz-linear-gradient(top, rgba(230,230,230,1) 0%, rgba(230,230,230,0) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(230,230,230,1)), color-stop(100%,rgba(230,230,230,0))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(230,230,230,1) 0%,rgba(230,230,230,0) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(230,230,230,1) 0%,rgba(230,230,230,0) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(230,230,230,1) 0%,rgba(230,230,230,0) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(230,230,230,1) 0%,rgba(230,230,230,0) 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5166b3', endColorstr='#004096ee',GradientType=0 ); /* IE6-9 */
 }
 
@@ -136,21 +154,70 @@
   }
 }
 
-.large-plume {
+.bubbles {
   position: fixed;
   transform: translateZ(0px);
-  background: #e6e6e6;
-  border: 4px solid #ffffff;
-  display: none;
-  bottom: -55px;
-  left: -35px;
-  height: 200px;
-  width: 200px;
-  border-radius: 100px;
+  width: 162px;
+  height: 537px;
+  background: inline('bubbles-repeat.svg');
+  left: -51px;
+  bottom: 0px;
+}
+
+.bubbles2 {
+  composes: bubbles;
+  transform: scaleY(-1);
+  bottom: 537px;
+}
+
+.bubbles3 {
+  composes: bubbles;
+  bottom: 1070px;
 }
 
 @media (min-width: 700px) {
-  .large-plume {
+  .bubbles {
+    width: 216px;
+    height: 716px;
+    left: -31px;
+    bottom: 74px;
+  }
+
+  .bubbles2 {
+    bottom: 790px;
+  }
+
+  .bubbles3 {
+    bottom: 1502px;
+  }
+}
+
+.plume1 {
+  display: none;
+  position: fixed;
+  transform: translateZ(0px);
+  background: inline('bubbles-plume-a.svg');
+  left: -31px;
+  bottom: -25px;
+  width: 236px;
+  height: 153px;
+  z-index: 1;
+}
+
+.plume2 {
+  display: none;
+  position: fixed;
+  transform: translateZ(0px);
+  background: inline('bubbles-plume-b.svg');
+  left: 137px;
+  bottom: -13px;
+  width: 152px;
+  height: 139px;
+  z-index: 1;
+}
+
+@media (min-width: 700px) {
+  .plume1, .plume2 {
     display: block;
   }
 }
@@ -203,7 +270,58 @@
     width: 445px;
     height: 170px;
     top: 164px;
-    left: -30px;
+    left: 35px;
     padding: 1px;
   }
+}
+
+.profile {
+  display: none;
+  margin-top: 15px;
+}
+
+@media (min-width: 1200px) {
+  .profile {
+    display: inline-block;
+  }
+}
+
+.cv {
+  list-style: none;
+  padding: 0;
+}
+
+.cv li {
+  display: inline;
+}
+
+.cv li::before {
+  content: "•";
+  padding: 10px;
+}
+
+.cv li:first-child::before {
+  content: "";
+}
+
+.talks {
+  padding: 0;
+  list-style: none;
+}
+
+.profilePhotoContainer {
+  position: relative;
+}
+
+.profilePhoto {
+  width: 200px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: 200px;
+  background-color: #4a5eff;
+  mix-blend-mode: lighten;
 }

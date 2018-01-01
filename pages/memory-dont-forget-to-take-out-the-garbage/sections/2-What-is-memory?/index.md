@@ -1,5 +1,5 @@
 <!-- DON'T FORGET TO RECORD! -->
-## What is memory? Why do we need it?
+### What is memory? Why do we need it?
 Before we can answer that, we need to learn about what memory is and why it is needed.
 
 Memory is used to store instructions and data for computer programs. Early computers like the ENIAC and Colossus were programmed by rewiring their hardware, and consumed data for processing from punched tape. They were fast at breaking encrypted messages, but it would take weeks to re-program them to perform a different task.
@@ -14,7 +14,7 @@ The memory used by modern-day computers, Random Access Memory, is lightning fast
 
 Web browsers and JavaScript manage memory on our behalf. The areas of memory it manages are called heaps.
 
-### Memory and JavaScript
+#### Memory and JavaScript
 JavaScript assigns memory for us whenever we declare variables, a fancy name for "a stored value that can change". Declaration reserves space in memory for our variables. There are four ways of declaring variables:
 
 `var functionScopedVariable`
@@ -67,7 +67,7 @@ Once variables are declared, they can be assigned a value. You and I commonly ca
 
 In fact, all of these operators assign memory. They tell javascript to take a value from the code on the right, and assign it to a memory address described by the variable name on the left.
 
-### Webassembly is the future
+#### Webassembly is the future
 Webassembly is a new feature for allowing browsers to run languages other than JavaScript in your web pages. It makes it possible to run high-performance code written in languages like C, C++, or Rust in a browser, like this example from Mozilla of the Unreal engine animating a complex 3d scene in real-time.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/TwuIRcpeUWE" frameborder="0" allowfullscreen></iframe>

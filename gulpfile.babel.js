@@ -19,7 +19,7 @@ import imagemin from "gulp-imagemin"
 
 import replace from "./lib/plugins/replace";
 import stats from './lib/plugins/stats';
-require('images-require-hook')(['.svg', '.png', '.ico'], '/assets/img');
+require('images-require-hook')(['.svg', '.png', '.ico', '.jpg', '.jpeg'], '/assets/img');
 
 const { Page } = require("./lib/components/page");
 const { Article } = require("./lib/components/article");
@@ -128,6 +128,7 @@ gulp.task('index-pages', function() {
 gulp.task('images', function() {
   return gulp.src([
     'lib/components/**/*.svg',
+    'lib/components/**/*.jpg',
     'lib/components/**/*.png',
     'lib/components/**/*.ico'
   ])

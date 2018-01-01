@@ -1,5 +1,5 @@
-# Functional JS in a nutshell
-## History
+## Functional JS in a nutshell
+### History
 Brendan Eich created Javascript in just ten days.
 
 He was told to make it like Java, the cool new programming language in 1995, but not to make it so good that it would  compete.
@@ -12,7 +12,7 @@ Javascript was born in a hurry, and has suffered for it. If you wanted to make a
 
 Eich says himself that this is because Javascript had "just enough of the good parts" to survive. So what exactly are we talking about here?
 
-## OO vs. Functional
+### OO vs. Functional
 The majority of the most widely-used languages are designed around the object-oriented programming principle, which structures data in a program like objects in the real world. Modeling complex systems such as transportation networks or commerce using software components that resemble physical properties and behaviour can make code easier to understand.
 
 If the train in your computer programme is doing something that its real-life counterpart is not doing, a software component that resembles the properties and behaviour of a train makes locating and refining problems easier.
@@ -41,7 +41,7 @@ However, Brendan Eich was a fan of a functional language called Scheme. He origi
 
 JavaScript shares these features with quite a few functional languages. So what can we learn about JavaScript from functional programming?
 
-## Functions!
+### Functions!
 Functions in computer languages were adapted from mathematics. They describe a relationship between an input and an output. For instance, if I wanted to write a function to write the first line of "ten green bottles", we can accept the number of bottles as an input and return the line as an output:
 
 ```
@@ -63,7 +63,7 @@ JavaScript has higher-order functions, which means a function can be an input or
 
 You may have used this to create a callback function, telling JavaScript what to do with the response when an AJAX request is complete. Congratulations! You've already taken your first steps with functional programming.
 
-## Purity
+### Purity
 As we've seen, functions receive inputs from their parameters, and give outputs using their return values. But functions can also have inputs and outputs that aren't immediately obvious.
 
 <a class="jsbin-embed" href="http://jsbin.com/japomo/embed?js,output">JS Bin on jsbin.com</a><script src="http://static.jsbin.com/js/embed.min.js?3.39.16"></script>
@@ -92,7 +92,7 @@ Writing functions to work with their parameter inputs and their return outputs m
 - Pure functions are testable *(because they always give the same output for a given input)*
 - Pure functions are flexible *(because they have no state of their own they can be used in any part of your code, even back and front-end)*
 
-## Currying
+### Currying
 The ability of functions to return other functions gives you some amazing abilities. It allows you to prepare functions with settings for later use, or fuse two functions together to do two things at once.
 
 Let's look at a song called Old MacDonald Had a Farm. It goes like this:
@@ -135,7 +135,7 @@ When we pass it into map to iterate over the lines of the song, the second part 
 8: "Everywhere a moo moo"
 ```
 
-## Composition
+### Composition
 
 Oops. Dogs don't say moo. What we need is a function that replaces "cow" with "dog", and "moo" with "bark". Luckily, it's quite easy to compose a function out of two other functions.
 
@@ -165,7 +165,7 @@ Now if we run iterate over the lines of the song using this new function, we sho
 8: "Everywhere a bark bark"
 ```
 
-# Bringing it together
+### Bringing it together
 Functional programming does more than just making JavaScript easier to work with. What is our code capable of if we apply these ideas on a larger scale?
 
 Let's take a look at React and Elm. React is a JavaScript framework created by Facebook. Elm is a new functional language that compiles to JavaScript. What makes them remarkable is how they're using functional programming to change the way we make software.
@@ -180,8 +180,7 @@ This is Super Mario technical demo written in Elm, and you can find it on the El
 
 You can also make changes to your code without it affecting its state. For instance, I can change the code and increase the height Mario can jump without restarting the application. It just carries on from where it left off. This allows me to experiment with my code to fix bugs and test changes while my application is running, and saves a lot of time.
 
-
-# Benefits
+### Benefits
 Using fundamental lessons from functional programming in your JavaScript code takes advantage of its better features, and there's plenty more that you can learn from functional languages that you can apply to your everyday work.
 
 More than this, I think it makes sense for the kind of work we do. As frontend developers, our work commonly breaks down to the same three tasks:
@@ -203,7 +202,7 @@ As we saw with the "row, row, row your boat" example, splitting data between mul
 In the present, it allows you to
 
 
-# Going Further
+### Going Further
 There are a few more things you might want to look into once you've taken your first steps with functional programming.
 
 Immutable.JS is another Facebook tool that adapts ideas from other functional languages. It gives you data structures like JavaScript's arrays and objects whose items cannot be modified. Changes can only be made by making a new copies of data. This makes unexpected side effects harder to introduce.
@@ -216,8 +215,7 @@ If you're determined to go all-in on a new functional language entirely, there a
 
 There's also a great book called [Professor Frisby's Mostly Adequate Guide to Functional Programming](https://github.com/MostlyAdequate/mostly-adequate-guide) which covers everything I've mentioned and more, in great detail.
 
-
-# Summary
+### Summary
 JavaScript was written in just ten days, and it suffers with a reputation among programmers to this day that it is a bit pants.
 
 But that isn't entirely true. Hidden from the first glance is a powerful and expressive functional language.
