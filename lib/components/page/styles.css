@@ -18,19 +18,19 @@
 .content {
   flex: 1;
   display: flex;
-  margin: 0 5px;
+  margin: 0 20px;
 }
 
 @media (min-width: 480px) {
   .content {
-    margin: 32px 20px 0 0px;
+    margin: 32px 20px 0 20px;
     max-width: 560px;
   }
 }
 
 @media (min-width: 700px) {
   .content {
-    margin: 15px 50px 0  0px;
+    margin: 15px 50px 0 20px;
   }
 }
 
@@ -243,7 +243,7 @@
 
 .main-heading {
   background: inline(logo.svg);
-  margin: 0 7px;
+  margin: 0 20px;
   z-index: 1;
   font-size: 0;
   width: 249px;

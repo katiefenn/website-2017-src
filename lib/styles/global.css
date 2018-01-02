@@ -3,11 +3,15 @@ body {
 }
 
 h1, h2, h3, h4 {
-    color: #4a5eff;
+  color: #4a5eff;
+}
 
-    a {
-    	text-decoration: none;
-    }
+h2 a {
+  text-decoration: none;
+}
+
+h2 a:hover {
+  text-decoration: underline;
 }
 
 h2 {
@@ -68,5 +72,5 @@ iframe {
 
 a {
   color: #4a5eff;
-  text-decoration: none;
+  text-decoration: underline;
 }
