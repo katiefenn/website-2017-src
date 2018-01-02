@@ -1,8 +1,9 @@
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
 }
 
 h1, h2, h3, h4 {
+  font-family: 'Lato', sans-serif;
   color: #384FFF;
 }
 
@@ -60,10 +61,12 @@ h5 {
 
 pre {
   white-space: pre-wrap;
+  border: 2px solid #333333;
+  padding: 10px;
 }
 
 code {
-  color: #555555;
+  color: #333333;
 }
 
 iframe {
