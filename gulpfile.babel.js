@@ -105,9 +105,9 @@ gulp.task('index-pages', function() {
     }))
 
     // Add permalinks to article pages
-    .pipe(replace(/<h1[\w="\s\-]*>([\w\s\-]+)<\/h1>/, (file) => {
+    .pipe(replace(/<h2[\w="\s\-]*>([\w\s\-]+)<\/h2>/, (file) => {
       let path = file.path.match(/articles\/([\w\-]*)/)[1];
-      return `<h1><a href="${ path }">$1</a></h1>`
+      return `<h2><a href="${ path }">$1</a></h2>`
     }))
 
     .pipe(renderToString(Article))
