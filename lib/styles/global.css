@@ -3,7 +3,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-  color: #4a5eff;
+  color: #384FFF;
 }
 
 h2 a {
@@ -71,6 +71,6 @@ iframe {
 }
 
 a {
-  color: #4a5eff;
+  color: #384FFF;
   text-decoration: underline;
 }
