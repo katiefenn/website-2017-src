@@ -16,16 +16,18 @@ As it turns out, my talk was selected. Having my talk picked out by the very peo
 
 The first day of Scotland JS 2015 was _tremendously_ exciting. It was the first time I'd met international speakers and stood on stage with them. I made friends with [Peter](https://twitter.com/jiggy_pete) and [Nat Tarnoff](https://twitter.com/nattarnoff). I felt like I _belonged there_.
 
-The standout talks that year were Lena Reinhard's [Talk about Nothing](https://www.youtube.com/watch?v=xl8OWGbZTsM), Lewis Cowper's talk [From Forklift Driver to Developer](https://www.youtube.com/watch?v=V6OsD60ne0w) and Nat Tarnoff's talk [The UX of Stairs](https://www.youtube.com/watch?v=TfiNP8iWDSo&t=304s). The message was clear: Scotland JS is a conference committed to _making the world a better place for everyone_.
+The standout talks that year were [Lena Reinhard's](https://twitter.com/lrnrd?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor) [Talk about Nothing](https://www.youtube.com/watch?v=xl8OWGbZTsM), [Lewis Cowper's](https://twitter.com/lewiscowper) talk [From Forklift Driver to Developer](https://www.youtube.com/watch?v=V6OsD60ne0w) and Nat Tarnoff's talk [The UX of Stairs](https://www.youtube.com/watch?v=TfiNP8iWDSo&t=304s). The message was clear: Scotland JS is a conference committed to _making the world a better place for everyone_.
 
 ### Getting involved
 At the Scotland JS 2015 afterparty, I asked Peter if I could get involved with the next event. I even offered to sweep the floor afterwards if he wanted me to. I've said this to a few conference organisers, but in 2016 Scotland JS was the first to say yes. Thankfully I didn't have to sweep the floor, so instead I looked after speakers and watched the registration desk.
 
 Scotland JS 2016 was also the first time we'd put a lot of time and effort into enforcing a code of conduct, and educating speakers about inclusive language. On top of this, I was picking up duties as a speaker at the inaugural Scotland CSS event.
 
+Among the standout talks were [James Spencer's](https://twitter.com/varjmes) [Your First PR](https://youtu.be/hf7NXDbF5zw), [Robin Mehner's](https://twitter.com/rmehner) [Surviving JavaScript](https://youtu.be/r2kT7En-vTw) and [Chad Gowler's](https://twitter.com/kitation) [How to Ask About Gender](https://youtu.be/Id68Zq3baMI).
+
 I remember the 2016 event as one of the one of the most tiring weeks of my life. The day begins at 6:45 in order to get to the venue at 7:30 before attendees arrive. If you want to go out for a drink at the end of the day, you have to choose between socialising and a good night's sleep.
 
-"Take more naps" was the number one theme among speakers and volunteers that week. Taking time out of talks to go back to the hotel for a nap is such an important piece of advice! Sadly, it is advice that is very hard to follow as an organiser or a volunteer. It was a glimpse into the enormous amount of work that organisers like Peter put into their events.
+"[Take more naps](https://twitter.com/varjmes/status/1023862200174297089)" was the number one theme among speakers and volunteers that week. Taking time out of talks to go back to the hotel for a nap is such an important piece of advice! Sadly, it is advice that is very hard to follow as an organiser or a volunteer. It was a glimpse into the enormous amount of work that organisers like Peter put into their events.
 
 ### Getting to the end
 I had my suspicions that end was coming for Scotland JS when we all took a break in 2017. It was a pleasant surprise when Peter announced that the conference would happen again in 2018, but a surprise nevertheless.
