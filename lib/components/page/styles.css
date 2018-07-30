@@ -286,9 +286,14 @@
   }
 }
 
+.work {
+  margin: 0.5rem 0;
+}
+
 .cv {
   list-style: none;
   padding: 0;
+  margin: 0.5rem 0;
 }
 
 .cv li {
@@ -306,6 +311,7 @@
 
 .talks {
   padding: 0;
+  margin: 0.5rem 0;
   list-style: none;
 }
 

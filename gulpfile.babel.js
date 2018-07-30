@@ -85,7 +85,7 @@ gulp.task('articles-images', function() {
     path.dirname = path.dirname.replace(/\d{4}\-\d{2}\-\d{2}\-/, '');
   }))
   .pipe(imagemin())
-  .pipe(gulp.dest('./dist'));
+  .pipe(gulp.dest('./dist/assets/img'));
 })
 
 gulp.task('index-pages', function() {

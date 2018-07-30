@@ -4,7 +4,8 @@
   "description": "A personal website for Katie Fenn",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp dev"
   },
   "author": "Katie Fenn",
   "license": "MIT",
@@ -21,6 +22,7 @@
     "gulp-hash": "^4.0.1",
     "gulp-imagemin": "^3.4.0",
     "gulp-include": "^2.3.1",
+    "gulp-insert": "^0.5.0",
     "gulp-markdown": "^1.2.0",
     "gulp-paginate": "^1.0.0",
     "gulp-postcss": "^6.3.0",
@@ -37,6 +39,7 @@
     "react-dom": "^15.4.2"
   },
   "dependencies": {
+    "gulp-debug": "^4.0.0",
     "through2": "^2.0.3"
   }
 }
