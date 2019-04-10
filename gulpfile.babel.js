@@ -36,7 +36,8 @@ gulp.task('make-site',
     'images',
     'article-stats',
     ['index-pages', 'articles'],
-    'articles-images'
+    'articles-images',
+    'files'
   )
 );
 
@@ -86,6 +87,11 @@ gulp.task('articles-images', function() {
   }))
   .pipe(imagemin())
   .pipe(gulp.dest('./dist/assets/img'));
+})
+
+gulp.task('files', function() {
+  return gulp.src(['files/**/*'])
+    .pipe(gulp.dest('./dist/files'));
 })
 
 gulp.task('index-pages', function() {

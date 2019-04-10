@@ -1,0 +1,70 @@
+body {
+  padding: 3em;
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 12px;
+}
+
+h1 {
+  font-family: 'cinzelregular';
+  font-weight: 100;
+  font-size: 2.074em;
+  line-height: 32px;
+  color: #000077;
+  display: inline-block;
+  padding-bottom: 4px;
+  border-bottom: 2px solid #000077;
+}
+
+h2 {
+  font-weight: 200;
+  font-size: 1.728em;
+  line-height: 28px;
+  color: #000077;
+  margin: 10px 0 5px;
+}
+
+h3 {
+  font-weight: 200;
+  font-size: 1.44em;
+  line-height: 24px;
+  color: #000077;
+  margin: 10px 0 5px;
+}
+
+h4 {
+  font-weight: 200;
+  font-size: 1.2em;
+  line-height: 20px;
+  color: #000077;
+  margin: 10px 0 5px;
+}
+
+ul {
+  margin: 0;
+  padding: 0 0 0 1em;
+}
+
+li {
+  margin: 0.5em 0;
+}
+
+.pills {
+  padding: 0;
+  margin: 0;
+}
+
+.pills li {
+  display: inline-block;
+  border: 2px solid #000077;
+  margin: 1px 0 8px;
+  padding: 1px 4px;
+  border-radius: 8px;
+  font-size: 0.875em;
+}
+
+th, td {
+  font-size: 12px;
+  padding: 2px 10px 2px 0;
+  text-align: left;
+  border: 0;
+}
