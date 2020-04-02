@@ -12,7 +12,6 @@ import modules from 'postcss-modules';
 import concat from 'gulp-concat';
 import assets from 'postcss-assets';
 import sort from 'gulp-sort';
-import sequence from 'gulp-sequence';
 import renderToString from "gulp-render-to-string";
 import paginate from "gulp-paginate";
 import imagemin from "gulp-imagemin"
@@ -27,28 +26,6 @@ const { PageIndex } = require("./lib/components/page-index");
 const ARTICLES_PER_PAGE = 10;
 
 let articleCount = 0;
-
-gulp.task('dev', sequence('make-site', 'watch-site', 'server'));
-
-gulp.task('make-site',
-  sequence(
-    'stylesheets',
-    'images',
-    'article-stats',
-    ['index-pages', 'articles'],
-    'articles-images',
-    'files'
-  )
-);
-
-gulp.task('watch-site', () => {
-  return gulp.watch(['lib/**/*.js', 'lib/**/*.css', 'lib/**/*.svg', 'articles/**/*'] , [
-    'stylesheets',
-    'images',
-    'index-pages',
-    'articles'
-  ]);
-});
 
 gulp.task('article-stats', () => {
   return gulp.src('articles/**/*')
@@ -175,3 +152,16 @@ gulp.task('server', function() {
     root: 'dist'
   });
 });
+
+gulp.task('make-site',
+  gulp.parallel(
+    'stylesheets',
+    'images',
+    'article-stats',
+    ['index-pages', 'articles'],
+    'articles-images',
+    'files'
+  )
+);
+
+gulp.task('dev', gulp.parallel('make-site', 'server'));
