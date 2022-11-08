@@ -33,7 +33,7 @@
     "gulp-watch": "^5.0.1",
     "images-require-hook": "^1.0.3",
     "postcss-assets": "^5.0.0",
-    "postcss-modules": "^0.6.3",
+    "postcss-modules": "^6.0.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "through2": "^2.0.3"
